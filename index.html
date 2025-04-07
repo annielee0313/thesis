@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ina4ngi.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">fluidnotes</div>
+        <div class="project-link">ABOUT THE PROJECT</div>
+    </header>
+
+    <div class="scroll-debug" id="scroll-debug">Current Year: <span id="current-year-display">1920</span></div>
+
+    <div class="main-container">
+        <div class="left-section">
+            <div class="section-title">GENDER HISTORY</div>
+            <div class="gender-history" id="gender-content">
+                gender history div
+            </div>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-years" id="timeline-years">
+                <!-- Timeline years will be generated dynamically -->
+            </div>
+        </div>
+        
+        <div class="right-section">
+
+            <div class="tab-navigation">
+                <div class="fragrance-title">FRAGRANCE</div>
+                <div class="tab active" data-tab="history">HISTORY</div>
+                <div class="tab" data-tab="migration">NOTE MIGRATION</div>
+                <div class="tab" data-tab="keywords">KEYWORDS</div>
+            </div>
+            
+            <div class="content-container">
+                <!-- History Section -->
+                <div class="content-section active" id="history-content">
+                    <div class="fragrance-history" id="fragrance-content">
+                        fragrance history div
+                    </div>
+                    <div class="charts-container">
+                        <div class="bar-chart">
+                        </div>
+                        <div class="stacked-bar-chart">
+                            <div class="placeholder-stacked">
+                                <div class="stacked-column">
+                            </div>
+                            <div class="stacked-bar-chart-label">stacked bar chart div</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Note Migration Section -->
+                <div class="content-section" id="migration-content">
+                    <div style="height: 100%; background-color: #f5f5f5; display: flex; justify-content: center; align-items: center;">
+                        Note Migration Content
+                    </div>
+                </div>
+                
+                <!-- Keywords Section -->
+                <div class="content-section" id="keywords-content">
+                    <div style="height: 100%; background-color: #f5f5f5; display: flex; justify-content: center; align-items: center;">
+                        Keywords Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

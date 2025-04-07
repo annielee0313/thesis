@@ -1,0 +1,282 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    overflow: hidden; /* Hide the scrollbar */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFCF5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.logo {
+    font-family: "bimbo-pro", san0serif;
+    font-size: 2rem;
+}
+
+.project-link {
+    font-size: 1rem;
+}
+
+.main-container {
+    display: flex;
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.section-title {
+    padding: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.left-section {
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+.gender-history {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.timeline-container {
+    position: relative;
+    width: 40px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.timeline-years {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3000px; /* Very tall to hold all years */
+    transform: translateY(0); /* Initial position */
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.year-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.year-marker.black {
+    background-color: #000;
+    color: #fff;
+}
+
+.year-marker.gray {
+    background-color: #d3d3d3;
+    color: #000;
+}
+
+.right-section {
+    width: calc(70% - 40px);
+    height: 100%;
+}
+
+.fragrance-title {
+    position: relative;
+    left: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.tab-navigation {
+    display: flex;
+    padding: 20px;
+    margin-left: 0;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.tab.active {
+    background-color: #e9c8fa;
+}
+
+.content-container {
+    height: calc(100% - 60px);
+    background-color: #f08080;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-section {
+    height: 100%;
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.fragrance-history {
+    height: 70%;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+.charts-container {
+    height: 30%;
+    display: flex;
+}
+
+.bar-chart {
+    width: 30%;
+    background-color: #f5f5f5;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.stacked-bar-chart {
+    width: 70%;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.bar-chart-label, .stacked-bar-chart-label {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 12px;
+}
+
+.placeholder-pie {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.placeholder-pie div {
+    height: 50%;
+}
+
+.pie-segment-1 {
+    width: 60%;
+    background-color: #e9c8fa;
+}
+
+.pie-segment-2 {
+    width: 25%;
+    background-color: #c8a887;
+}
+
+.pie-segment-3 {
+    width: 15%;
+    background-color: #c8fac8;
+}
+
+.placeholder-stacked {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.stacked-column {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stacked-segment-1 {
+    flex-grow: 0;
+    height: 30%;
+    background-color: #e9c8fa;
+}
+
+.stacked-segment-2 {
+    flex-grow: 0;
+    height: 20%;
+    background-color: #c8a887;
+}
+
+.stacked-segment-3 {
+    flex-grow: 1;
+    background-color: #c8fac8;
+}
+
+.scroll-debug {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 110;
+    font-size: 12px;
+}
